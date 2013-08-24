@@ -1,8 +1,10 @@
 package org.HiarcGames.Testing.Helpers;
 
+import java.text.DecimalFormat;
+
 public class Vector2 {
 	public float x,y;
-	
+	private DecimalFormat form = new DecimalFormat("0.000000");
 	public Vector2(float x, float y)
 	{
 		this.x = x;
@@ -121,18 +123,18 @@ public class Vector2 {
 		return (this.x * v2.x )+(this.y*v2.y);
 	}
 	
-	public int AngleBetween(Vector2 vec,int adds)
+	public float AngleBetween(Vector2 vec,int adds)
 	{
 		double angle = Math.toDegrees(Math.atan2(vec.y - this.y , vec.x - this.x));
 		if(angle < 0){ angle +=360; }
-		return (int)Math.round(Math.abs(angle)+adds);
+		return (float)Math.abs(angle)+adds;
 	}
 	
-	public int AngleBetweenRad(Vector2 vec,int adds)
+	public float AngleBetweenRad(Vector2 vec,int adds)
 	{
 		double angle = Math.toDegrees(Math.atan2(vec.y - this.y , vec.x - this.x));
 		if(angle < 0){ angle +=360; }
-		return (int)Math.toRadians(Math.abs(angle))+adds;
+		return (float) (Math.toRadians(Math.abs(angle))+adds);
 	}
 	public void print()
 	{

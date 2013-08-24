@@ -1,0 +1,15 @@
+FAVORITE s
+
+		10 second quest
+		
+		And
+	
+		reflect light at mirrors
+	
+	
+
+Story:
+
+Player is a child who live's in the middle of a busseling city. One day when the player leaves to go to school they fall into a manhole directly in the middle of the street.
+When the player awakes he finds himself in an under ground tunnel. Inside of the tunnel the player has to solve may "Light" puzzles, the light has to hit the target directly.
+The Light Puzzles get harder and harder till the player can finally make it out.

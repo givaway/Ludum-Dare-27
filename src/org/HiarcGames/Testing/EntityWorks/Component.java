@@ -9,6 +9,7 @@ public class Component {
 	public int id;
 	public GameObject gameobject;
 	public Trans Transform;
+	public Input input;
 	public Component()
 	{
 		this.name = this.getClass().getSimpleName();
@@ -44,7 +45,7 @@ public class Component {
 		
     }
 	
-	public void Update(float dt, Input input)
+	public void Update(float dt)
 	{
 	}
 	

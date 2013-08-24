@@ -6,6 +6,7 @@ import org.HiarcGames.Testing.Helpers.Globals;
 import org.HiarcGames.Testing.Helpers.Trans;
 import org.HiarcGames.Testing.StateMachine.State;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 
 public class GameObject {
 	public String name;
@@ -22,6 +23,7 @@ public class GameObject {
 		for(int i = 0; i<comps.length; i++)
 		{
 			comps[i].gameobject = this;
+			
 			this.comps.add(comps[i]);
 		}
 		
@@ -34,6 +36,7 @@ public class GameObject {
 		for(int i = 0; i < this.comps.size(); i++)
 		{
 			Component c = this.comps.get(i);
+			c.input = Globals.SM.gc.getInput();
 			c.Transform = this.Transform;
 			c.id = i;
 			c.Start();
@@ -47,7 +50,7 @@ public class GameObject {
 		{
 			Component c = this.comps.get(i);
 			c.Transform = this.Transform;
-			c.Update(dt,Globals.SM.gc.getInput());
+			c.Update(dt);
 			this.Transform = c.Transform;
 		}
 	}

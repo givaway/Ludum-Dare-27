@@ -27,10 +27,10 @@ public class Game extends BasicGame
 	@Override
 	public void init(GameContainer gc) throws SlickException 
 	{
-
-		Globals.SM.addState(new testState());
-		Globals.SM.setState("testState");
 		Globals.SM.gc = gc;
+		Globals.SM.addState(new Menu());
+		Globals.SM.setState("Menu");
+		
 
 	}
 	DecimalFormat form = new DecimalFormat("0.000000");
@@ -80,8 +80,8 @@ public class Game extends BasicGame
 		try
 		{
 			AppGameContainer appgc;
-			appgc = new AppGameContainer(new Game("LD27"));
-			appgc.setDisplayMode(1280, 720, false);
+			appgc = new AppGameContainer(new Game("Bright Cavern"));
+			appgc.setDisplayMode(Globals.Width,Globals.Height, false);
 			appgc.setShowFPS(true);
 			appgc.start();
 		}
