@@ -1,4 +1,4 @@
-package org.HiarcGames.Testing.Content.Components.Menu;
+package org.HiarcGames.Testing.Content.States.Menu;
 
 import org.HiarcGames.Testing.EntityWorks.Component;
 import org.HiarcGames.Testing.Helpers.Globals;
@@ -23,6 +23,7 @@ public class MenuItem extends Component{
 		this.Transform.Position.y = Globals.Height/2;
 		
 		this.Transform.Position.y += this.index * 30;
+		this.Transform.Z = 2;
 	}
 	
 	public void Update(float dt)

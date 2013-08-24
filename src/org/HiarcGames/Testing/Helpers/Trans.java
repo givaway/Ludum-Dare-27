@@ -5,8 +5,8 @@ import org.HiarcGames.Testing.EntityWorks.GameObject;
 public class Trans {
 	
 	public Vector2 Position = new Vector2(0,0);
-	public int Z,rotOff = 0;
-	public float Rot = 0;
+	
+	public float Z,Rot,rotOff = 0;
 	
 	boolean ZIgnore = false;
 	GameObject Follow,RotTowards = null;

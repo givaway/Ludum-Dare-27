@@ -123,14 +123,14 @@ public class Vector2 {
 		return (this.x * v2.x )+(this.y*v2.y);
 	}
 	
-	public float AngleBetween(Vector2 vec,int adds)
+	public float AngleBetween(Vector2 vec,float adds)
 	{
 		double angle = Math.toDegrees(Math.atan2(vec.y - this.y , vec.x - this.x));
 		if(angle < 0){ angle +=360; }
 		return (float)Math.abs(angle)+adds;
 	}
 	
-	public float AngleBetweenRad(Vector2 vec,int adds)
+	public float AngleBetweenRad(Vector2 vec,float adds)
 	{
 		double angle = Math.toDegrees(Math.atan2(vec.y - this.y , vec.x - this.x));
 		if(angle < 0){ angle +=360; }

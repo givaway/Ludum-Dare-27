@@ -1,6 +1,6 @@
-package org.HiarcGames.Testing.Content;
+package org.HiarcGames.Testing.Content.States.Menu;
 
-import org.HiarcGames.Testing.Content.Components.Menu.*;
+import org.HiarcGames.Testing.Content.States.Menu.*;
 import org.HiarcGames.Testing.EntityWorks.Component;
 import org.HiarcGames.Testing.EntityWorks.GameObject;
 import org.HiarcGames.Testing.StateMachine.State;

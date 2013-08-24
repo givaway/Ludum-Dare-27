@@ -5,6 +5,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.HiarcGames.Testing.Content.*;
+import org.HiarcGames.Testing.Content.States.Menu.Menu;
+import org.HiarcGames.Testing.Content.States.Menu.MenuBG;
 import org.HiarcGames.Testing.Helpers.Globals;
 import org.HiarcGames.Testing.StateMachine.StateMachine;
 import org.lwjgl.opengl.GL11;

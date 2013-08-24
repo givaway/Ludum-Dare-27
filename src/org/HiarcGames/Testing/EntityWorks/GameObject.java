@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.HiarcGames.Testing.Helpers.Globals;
 import org.HiarcGames.Testing.Helpers.Trans;
 import org.HiarcGames.Testing.StateMachine.State;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 
@@ -57,8 +58,10 @@ public class GameObject {
 	
 	public void Render(Graphics g)
 	{
+		
 		for(int i = 0; i < this.comps.size(); i++)
 		{
+			g.setColor(new Color(255,255,255,255));
 			this.comps.get(i).Render(g);
 		}
 	}

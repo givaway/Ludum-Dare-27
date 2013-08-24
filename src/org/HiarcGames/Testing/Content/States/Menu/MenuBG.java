@@ -1,4 +1,4 @@
-package org.HiarcGames.Testing.Content.Components.Menu;
+package org.HiarcGames.Testing.Content.States.Menu;
 
 import org.HiarcGames.Testing.EntityWorks.Component;
 import org.HiarcGames.Testing.Helpers.Globals;
@@ -16,6 +16,7 @@ public class MenuBG extends Component{
 	
 	public void Start()
 	{
+		this.Transform.Z =2;
 		try {
 			this.cavern = new Image("Art/Menu/MenuArt.png");
 			this.cavern.setFilter(Image.FILTER_NEAREST);

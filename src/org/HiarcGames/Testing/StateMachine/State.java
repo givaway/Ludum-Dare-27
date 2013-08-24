@@ -1,13 +1,14 @@
 package org.HiarcGames.Testing.StateMachine;
 
 import java.util.ArrayList;
-
+import java.util.Arrays;
 import org.HiarcGames.Testing.EntityWorks.*;
 import org.newdawn.slick.Graphics;
 
 public class State {
 	public String name;
 	ArrayList<GameObject> ObjectList = new ArrayList<GameObject>();
+	ArrayList<Layer> l;
 	public State()
 	{
 		this.name = this.getClass().getSimpleName();
@@ -29,15 +30,63 @@ public class State {
 		{
 			this.ObjectList.get(i).Update(dt);
 		}
+		
+		
 	}
 	
 	public void Render(Graphics g)
 	{
-		g.drawString("GameObject Count: "+this.ObjectList.size(), 10, 30);
+		/*g.drawString("GameObject Count: "+this.ObjectList.size(), 10, 30);
 		for(int i = 0; i < this.ObjectList.size(); i++)
 		{
 			this.ObjectList.get(i).Render(g);
 		}
+		*/
+		
+		this.l = new ArrayList<Layer>();
+		ArrayList<Float> layers = new ArrayList<Float>();
+		for(GameObject a : this.ObjectList)
+		{
+			Layer fl = this.FindLayer(a.Transform.Z);
+			if(fl == null)
+			{
+				Layer nl = new Layer(a.Transform.Z);
+				nl.AddGameObject(a);
+				this.l.add(nl);
+				layers.add(a.Transform.Z);
+			}
+			else
+			{
+				fl.AddGameObject(a);
+			}
+		}
+		Float[] sorted = layers.toArray(new Float[]{});
+		Arrays.sort(sorted);
+		for(Float z: sorted)
+		{
+			Layer a = this.FindLayer(z);
+			a.Render(g);
+		}
+
+		
+		
+		
+	}
+	
+	public Layer FindLayer(float layer)
+	{
+		Layer ret = null;
+		if(this.l != null)
+		{
+			for(Layer r: this.l)
+			{
+				if(r.layer == layer)
+				{
+					ret = r;
+				}
+			}
+		}
+		return ret;
 	}
 	
 	
