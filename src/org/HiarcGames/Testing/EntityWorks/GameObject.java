@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.HiarcGames.Testing.Helpers.Globals;
 import org.HiarcGames.Testing.Helpers.Trans;
 import org.HiarcGames.Testing.StateMachine.State;
+import org.jbox2d.dynamics.World;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
@@ -16,10 +17,13 @@ public class GameObject {
 	public Trans Transform = new Trans();
 	public State Parent = null;
 	ArrayList<Component> comps = new ArrayList<Component>();
+	public World world;
 	public GameObject(String name,Component[] comps)
 	{
 		this.Parent = Globals.SM.currentState;
+		this.world = this.Parent.world;
 		this.name = this.Parent.giveName(name);
+		
 		//System.out.println(this.name+": Created");
 		for(int i = 0; i<comps.length; i++)
 		{
@@ -37,6 +41,7 @@ public class GameObject {
 		for(int i = 0; i < this.comps.size(); i++)
 		{
 			Component c = this.comps.get(i);
+			c.world = this.world;
 			c.input = Globals.SM.gc.getInput();
 			c.Transform = this.Transform;
 			c.id = i;

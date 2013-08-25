@@ -8,14 +8,15 @@ import org.newdawn.slick.Input;
 
 public class MenuItem extends Component{
 	int Width, Height,index = 0;
-	String text = "";
+	String text,opens = "";
 	Font f;
-	public MenuItem(String text, int index)
+	public MenuItem(String text, int index,String state)
 	{
 		super();
 		
 		this.text = text;
 		this.index = index;
+		this.opens = state;
 	}
 	public void Start()
 	{
@@ -29,6 +30,14 @@ public class MenuItem extends Component{
 	public void Update(float dt)
 	{
 		
+	}
+	
+	public void mousePressed(int button, int x, int y)
+	{
+		if(button == Input.MOUSE_LEFT_BUTTON && this.isInside())
+		{
+			Globals.SM.setState(this.opens);
+		}
 	}
 	
 	public boolean isInside()

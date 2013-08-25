@@ -9,5 +9,6 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Users/jordan/Desktop/Ludum Dare 27/LWJGL/native/macosx"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/jordan/Desktop/Ludum Dare 27/Libs/jbox2d-library-2.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

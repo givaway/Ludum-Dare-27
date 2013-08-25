@@ -1,6 +1,7 @@
 package org.HiarcGames.Testing.EntityWorks;
 
 import org.HiarcGames.Testing.Helpers.Trans;
+import org.jbox2d.dynamics.World;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 
@@ -10,6 +11,7 @@ public class Component {
 	public GameObject gameobject;
 	public Trans Transform;
 	public Input input;
+	public World world;
 	public Component()
 	{
 		this.name = this.getClass().getSimpleName();

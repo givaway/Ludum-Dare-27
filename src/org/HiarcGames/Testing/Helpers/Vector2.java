@@ -2,6 +2,8 @@ package org.HiarcGames.Testing.Helpers;
 
 import java.text.DecimalFormat;
 
+import org.jbox2d.common.Vec2;
+
 public class Vector2 {
 	public float x,y;
 	private DecimalFormat form = new DecimalFormat("0.000000");
@@ -135,6 +137,10 @@ public class Vector2 {
 		double angle = Math.toDegrees(Math.atan2(vec.y - this.y , vec.x - this.x));
 		if(angle < 0){ angle +=360; }
 		return (float) (Math.toRadians(Math.abs(angle))+adds);
+	}
+	public Vec2 toVec()
+	{
+		return new Vec2(this.x,this.y);
 	}
 	public void print()
 	{

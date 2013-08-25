@@ -1,0 +1,9 @@
+{
+	'name':'level1',
+	'version':'0.1',
+	'objects':
+	[
+		{'type':'block','data':{'artx':0,'arty':0,'artW':32,'artH':32,'x':0,'y':0,'Width':32,'Height':32,'noclip':false}},
+		{'type':'block','data':{'artx':0,'arty':0,'artW':32,'artH':32,'x':0,'y':0,'Width':32,'Height':32,'noclip':false}}	
+	]
+}

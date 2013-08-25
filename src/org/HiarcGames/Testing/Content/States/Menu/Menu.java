@@ -15,9 +15,9 @@ public class Menu extends State {
 	public void Start()
 	{
 		new GameObject("Menu BG",new Component[]{new MenuBG()});
-		new GameObject("Menu Item",new Component[]{new MenuItem("Start",0)});
-		new GameObject("Menu Item",new Component[]{new MenuItem("Options",1)});
-		new GameObject("Menu Item",new Component[]{new MenuItem("Credits",2)});
+		new GameObject("Menu Item",new Component[]{new MenuItem("Start",0,"Level1")});
+		new GameObject("Menu Item",new Component[]{new MenuItem("Options",1,"")});
+		new GameObject("Menu Item",new Component[]{new MenuItem("Credits",2,"")});
 		new GameObject("Menu Item",new Component[]{new SpotLight()});
 	}
 }

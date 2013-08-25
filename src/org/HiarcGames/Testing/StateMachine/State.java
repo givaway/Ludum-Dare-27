@@ -2,21 +2,27 @@ package org.HiarcGames.Testing.StateMachine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import org.HiarcGames.Testing.EntityWorks.*;
+import org.jbox2d.collision.AABB;
+import org.jbox2d.common.Vec2;
+import org.jbox2d.dynamics.World;
 import org.newdawn.slick.Graphics;
 
 public class State {
 	public String name;
 	ArrayList<GameObject> ObjectList = new ArrayList<GameObject>();
 	ArrayList<Layer> l;
+	public static final World world = new World( new Vec2(0.0f, 2.0f), true);
 	public State()
 	{
 		this.name = this.getClass().getSimpleName();
+		this.world.
 	}
 	
 	public void Start()
 	{
-		
+
 	}
 	public int getID()
 	{
@@ -25,6 +31,8 @@ public class State {
 	
 	public void Update(float dt)
 	{
+		this.world.step(1.0f / 60.f, 8, 3);
+
 		//System.out.println("Update");
 		for(int i = 0; i < this.ObjectList.size(); i++)
 		{
@@ -175,7 +183,7 @@ public class State {
 		return c==0?n:n+c;
 	}
 	public void DestroyGameObject(String n)
-	{
+{
 		for(int i = 0; i < this.ObjectList.size(); i++)
 		{
 			if(this.ObjectList.get(i).name.compareToIgnoreCase(n) == 0)

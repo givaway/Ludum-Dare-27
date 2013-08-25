@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import org.HiarcGames.Testing.Content.*;
 import org.HiarcGames.Testing.Content.States.Menu.Menu;
+import org.HiarcGames.Testing.Content.States.Game.Level1;
 import org.HiarcGames.Testing.Content.States.Menu.MenuBG;
 import org.HiarcGames.Testing.Helpers.Globals;
 import org.HiarcGames.Testing.StateMachine.StateMachine;
@@ -31,6 +32,7 @@ public class Game extends BasicGame
 	{
 		Globals.SM.gc = gc;
 		Globals.SM.addState(new Menu());
+		Globals.SM.addState(new Level1());
 		Globals.SM.setState("Menu");
 		
 
@@ -85,7 +87,9 @@ public class Game extends BasicGame
 			appgc = new AppGameContainer(new Game("Bright Cavern"));
 			appgc.setDisplayMode(Globals.Width,Globals.Height, false);
 			appgc.setShowFPS(true);
+			//appgc.setTargetFrameRate(7);
 			appgc.start();
+			
 		}
 		catch (SlickException ex)
 		{
